@@ -1,0 +1,38 @@
+@charset "utf-8";
+body {
+    font-family: "ヒラギノ角ゴ ProN W3", "HiraKakuProN-W3", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    font-size:150%;
+    text-align: center;
+}
+
+#result {
+    color: purple;
+    text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+    -1px 1px 0 #000, 1px -1px 0 #000,
+    0px 1px 0 #000,  0-1px 0 #000,
+    -1px 0 0 #000, 1px 0 0 #000;
+}
+
+#resultJC {
+    color: yellow;
+    text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+    -1px 1px 0 #000, 1px -1px 0 #000,
+    0px 1px 0 #000,  0-1px 0 #000,
+    -1px 0 0 #000, 1px 0 0 #000;
+}
+
+#resultJ {
+    color: red;
+    text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+    -1px 1px 0 #000, 1px -1px 0 #000,
+    0px 1px 0 #000,  0-1px 0 #000,
+    -1px 0 0 #000, 1px 0 0 #000;
+}
+
+#resultA {
+    color: greenyellow;
+    text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+    -1px 1px 0 #000, 1px -1px 0 #000,
+    0px 1px 0 #000,  0-1px 0 #000,
+    -1px 0 0 #000, 1px 0 0 #000;
+}

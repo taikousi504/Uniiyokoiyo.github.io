@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UniiyoKoiyo</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script language="javascript" type="text/javascript">
+            function Calc(){
+                targetResult = document.getElementById("result");
+                targetJC = document.getElementById("resultJC");
+                targetJ = document.getElementById("resultJ");
+                targetA = document.getElementById("resultA");
+
+                const notesCount = document.getElementById("notesCount");
+                
+                const oneOfJC = 1000000 / notesCount.value * 1.01;
+                const oneOfJ = 1000000 / notesCount.value;
+                const oneOfA = 1000000 / notesCount.value * 0.5;
+
+                let result = 0;
+                let jcCount = 0;
+                let jCount = 0;
+                let aCount = 0;
+                while(1){
+                    while(result + oneOfJC + oneOfJ * jCount < 114514){
+                        result += oneOfJC;
+                        jcCount++;
+                    }
+                    for (let i = 0; i < jCount; i++){
+                        result += oneOfJ;
+                    }
+                    while(result < 114514){
+                        result += oneOfA;
+                        aCount++;
+                    }
+
+                    if (Math.floor(result) == 114514){break;}
+                    jCount++;
+                    jcCount = 0;
+                    aCount = 0;
+                    result = 0;
+
+                    if (jCount > notesCount.value){
+                        result = -1;
+                        break;
+                    }
+                }
+
+                if (result != -1){
+                    targetResult.innerHTML = "";
+                    targetJC.innerHTML = "JC..." + jcCount;
+                    targetJ.innerHTML = "J..." + jCount;
+                    targetA.innerHTML = "A..." + aCount;
+                }
+                else{
+                    targetResult.innerHTML = "不可能";
+                    targetJC.innerHTML = "";
+                    targetJ.innerHTML = "";
+                    targetA.innerHTML = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <label for="notesCount">ノーツ数</label>
+        <input type="number" id="notesCount"><br><br>
+        <input type="button" value="イク" onclick="Calc();"><br>
+        <label id="result"></label><br>
+        <label id="resultJC">JC...---</label><br>
+        <label id="resultJ">J...---</label><br>
+        <label id="resultA">A...---</label>
+    </body>
+</html>
